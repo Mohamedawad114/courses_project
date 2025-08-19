@@ -1,0 +1,1179 @@
+{
+	"info": {
+		"_postman_id": "36c030d5-a2d8-4795-8e54-bc407d17d8aa",
+		"name": "courses",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "44460916"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "password",
+					"item": [
+						{
+							"name": "reset password Req",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "edit password",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU1MjA3OTc0LCJleHAiOjE3NTUyMDk3NzR9.SG2kLOV5-Ujtu5bqfTiZPPiJIhQY-lo96Blt-ZzupIA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newPassword\":\"mo.awad4444\",\n    \"OTP\":\"5g5f2n\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/users/restPassword"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sginup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"fullName\":\"mohamed Awad\",\n    \"email\":\"mohamedahmedawad180@gmail.com\",\n    \"password\":\"mo.awad4444\",\n    \"phone\":\"01016624425\",\n    \"role\":\"Admin\",\n    \"college\":\"engineering\",\n    \"previous_knowledge\":\"nodejs\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "signup gmail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "aut",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"idToken\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk4ZGM1NWM4YjIwOTM2M2EyNDUxNzc0YmNlNWM0MjcxOGQxM2NiN2QiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI0ODkwNjYyOTA5NzAtM3IzaGVxdGZwcnNjZHRpdTQxMzY1bW05NXJxMWMwZHMuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0ODkwNjYyOTA5NzAtM3IzaGVxdGZwcnNjZHRpdTQxMzY1bW05NXJxMWMwZHMuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTIzMDkyOTI1ODU3NjI2ODM2NDAiLCJlbWFpbCI6Im1vaGFtZWRhaG1lZGF3YWQxODBAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTc1NTIwNTkxOSwibmFtZSI6Im1vaGFtZWQgQXdhZCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKZ1d6QzlFQm1WNHdNOUhXLXVaLWJidDFpanEwa3BlV0h4Y1JnQ0E5S2dIa3JvcmpGaz1zOTYtYyIsImdpdmVuX25hbWUiOiJtb2hhbWVkIiwiZmFtaWx5X25hbWUiOiJBd2FkIiwiaWF0IjoxNzU1MjA2MjE5LCJleHAiOjE3NTUyMDk4MTksImp0aSI6IjNlYTc1YzY1OTBmYWYyOWU1YzlmMjA1ZDE5MGVjMzJlZDVmZTMzMjUifQ.GuRwf-ZwsK5PQR4S5tgQFNOqEt-496XjBRmSAF33maKglHo87Wb199Lmqen5PHcZ_1UfSmZS7vIE4heE6QlBpTejTzJ6VQgAPl3UafjuHfiDbIKdInPwW8YTJ2niAPC1KNSUXhxHSxGqDLAEosRKtsJPcYODZcSJpZBsnEwsz4YtLkbqxi6DZL-icjw7dO3zoudkpOH2eBr_SSoDTS_San9i0tCgtaXcm2J-NdSzw4ln04e62cGLZaDCt2LQP6_-usHg7S3HZSEdxNqQK7-Yjv30cSf2uWHRbt_c77vyhj0NqRykwkSrllkdDvN90PUkOnX1-c2ly-H5t-og5VB2HA\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users/signupWithgmail"
+					},
+					"response": []
+				},
+				{
+					"name": "confirm otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"mohamedahmedawad180@gmail.com\",\n    \"OTP\":\"vs7jns\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users/confirmEmail"
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "aut",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user1@gmail.com\",\n    \"password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "upload photo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJpYXQiOjE3NTUyMDg5NTYsImV4cCI6MTc1NTIxMDc1Nn0.wK3ptG6hvU4FJQG1POqUzvqglV--ErNZxjmtHZguGQQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f06fe4a-4b97-46d0-bccd-1bdeda255921"
+								}
+							]
+						},
+						"url": "http://localhost:3000/users/photo"
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzU1MjA2Mjg5LCJleHAiOjE3NTUyMDgwODl9.65hKzYfuchIJexEE06Gvcq9HzEXOMBsxmlrITl_-3yo",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/users/refresh"
+					},
+					"response": []
+				},
+				{
+					"name": "user profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU1MjA3OTc0LCJleHAiOjE3NTUyMDk3NzR9.SG2kLOV5-Ujtu5bqfTiZPPiJIhQY-lo96Blt-ZzupIA",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/users/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU1MjA3OTc0LCJleHAiOjE3NTUyMDk3NzR9.SG2kLOV5-Ujtu5bqfTiZPPiJIhQY-lo96Blt-ZzupIA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"phone\":\"0101662442\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users/update"
+					},
+					"response": []
+				},
+				{
+					"name": "update password",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGI3MWYyNGU4MTJmYjAzM2YyMWRlZSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc1Mzk3MjcxNSwiZXhwIjoxNzUzOTc0NTE1fQ.YDScRAg1nP9s4S7_ASIPpraDL3k61fFX4ZISbJTulgU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"User6\",\r\n    \"user_name\": \"user_6\",\r\n    \"email\": \"user6@example.com\",\r\n    \"password\": \"password123\",\r\n    \"isAdmin\": false\r\n  }"
+						},
+						"url": "http://localhost:3000/users/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "get users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "aut",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user1@gmail.com\",\n    \"password\":\"12345678\"\n}"
+						},
+						"url": "http://localhost:3000/users/search/689890bb82dc9754068eb06f"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "add category",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MjgxODM3LCJleHAiOjE3NTUyODM2Mzd9.PsrQW50_4VRorg4qdm-wEjKL2seMUsD_oo41EncgQYM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"web-development\",\r\n    \"description\":\"لتصميم مواقع الويب\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/categories/add"
+							},
+							"response": []
+						},
+						{
+							"name": "category photo",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MjgxODM3LCJleHAiOjE3NTUyODM2Mzd9.PsrQW50_4VRorg4qdm-wEjKL2seMUsD_oo41EncgQYM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f064151-cce2-4c50-a7d5-6413cef7b4ae"
+										}
+									]
+								},
+								"url": "http://localhost:3000/categories/photo/1"
+							},
+							"response": []
+						},
+						{
+							"name": "update category",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MjkxODg1LCJleHAiOjE3NTUyOTM2ODV9.-icScvLO61_RnitOr-FgTKaQ-sB1Rj4NTMhYtkoI6xI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Back-End\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/categories/update/1"
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MjkxODg1LCJleHAiOjE3NTUyOTM2ODV9.-icScvLO61_RnitOr-FgTKaQ-sB1Rj4NTMhYtkoI6xI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"web-development\",\r\n    \"description\":\"لتصميم مواقع الويب\"\r\n}"
+								},
+								"url": "http://localhost:3000/categories/delete/5"
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjE1MjY0LCJleHAiOjE3NTU2MTcwNjR9.jY-DpJuoVY78nfRKochSpswMuOPBxBeSPvReNBQrTb0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f064151-cce2-4c50-a7d5-6413cef7b4ae"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/categories/list?page=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categories",
+										"list"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MjkxODg1LCJleHAiOjE3NTUyOTM2ODV9.-icScvLO61_RnitOr-FgTKaQ-sB1Rj4NTMhYtkoI6xI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/categories/all?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjE1MjY0LCJleHAiOjE3NTU2MTcwNjR9.jY-DpJuoVY78nfRKochSpswMuOPBxBeSPvReNBQrTb0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f064151-cce2-4c50-a7d5-6413cef7b4ae"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/categories/search?name=Back-End",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Back-End"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NDY3NTM4LCJleHAiOjE3NTU0NjkzMzh9.TEwgY3-AkBwbL0qcGRIsd4OlbaEjPDtzpp7E4cpvvjs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"postgre Basics\",\r\n    \"description\": \"Learn the fundamentals of JavaScript programming language.\",\r\n    \"period\": \"4 weeks\",\r\n    \"roadmap\": \"Beginner → advanced\",\r\n    \"categoryId\":2,\r\n    \"price\": 399,\r\n    \"type\": \"online\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/courses/add"
+					},
+					"response": []
+				},
+				{
+					"name": "upload pdf",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MzgwNDczLCJleHAiOjE3NTUzODIyNzN9.KdS1iRxUpytxZBABjrIR4P3HgpQnz4SfLhn9MgZlvzw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pdf",
+									"type": "file",
+									"src": "postman-cloud:///1f07aebe-3071-4200-a080-6d9657251102"
+								}
+							]
+						},
+						"url": "http://localhost:3000/courses/1/uploadpdf"
+					},
+					"response": []
+				},
+				{
+					"name": "video",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MzgwNDczLCJleHAiOjE3NTUzODIyNzN9.KdS1iRxUpytxZBABjrIR4P3HgpQnz4SfLhn9MgZlvzw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "video",
+									"type": "file",
+									"src": "postman-cloud:///1f07aeaa-0da4-4380-b64a-b52d51ea39f4"
+								}
+							]
+						},
+						"url": "http://localhost:3000/courses/1/video"
+					},
+					"response": []
+				},
+				{
+					"name": "add instructor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjE1MjY0LCJleHAiOjE3NTU2MTcwNjR9.jY-DpJuoVY78nfRKochSpswMuOPBxBeSPvReNBQrTb0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"instructorId\":3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/courses/8/addinstructor"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1Mzc4NDQ4LCJleHAiOjE3NTUzODAyNDh9.xnBPBEkqdMZTRozYLCdbwbKzBXgrfa7bXFPg3Z1PkSw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"price\":299\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/courses/1/update"
+					},
+					"response": []
+				},
+				{
+					"name": "remove instructor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"mohamedahmedawad180@gmail.com\",\n\"OTP\":\"l7pv2o\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/courses/:id/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								":id",
+								"update"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjI0MzE2LCJleHAiOjE3NTU2MjYxMTZ9.Zeo66IH9FvCjnRA45ISic34UM2NNkUu7heQghXIpt-c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"mohamedahmedawad180@gmail.com\",\n\"OTP\":\"l7pv2o\"\n}"
+						},
+						"url": "http://localhost:3000/courses/9/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "serach",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MzgwNDczLCJleHAiOjE3NTUzODIyNzN9.KdS1iRxUpytxZBABjrIR4P3HgpQnz4SfLhn9MgZlvzw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/courses/search?name=JavaScript Basics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "JavaScript Basics"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subscriber_number",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1MzgwNDczLCJleHAiOjE3NTUzODIyNzN9.KdS1iRxUpytxZBABjrIR4P3HgpQnz4SfLhn9MgZlvzw",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/courses/subscriber_number"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjE3MTIyLCJleHAiOjE3NTU2MTg5MjJ9.15iCOY6CwoBQXKhGXZEA0Lk_2ZPv7xeEFoCnqackqZo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/courses/1/list?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"courses",
+								"1",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "best course",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "share",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIwMDIzLCJleHAiOjE3NTU2MjE4MjN9.tdldmziywR__5LH3KvKW5rzO7TjvctkN9Tp9C21aLFs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"evalution\":8,\r\n    \"comment\":\"god\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/reviews/share/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIwMDIzLCJleHAiOjE3NTU2MjE4MjN9.tdldmziywR__5LH3KvKW5rzO7TjvctkN9Tp9C21aLFs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/reviews/1/update"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIwMDIzLCJleHAiOjE3NTU2MjE4MjN9.tdldmziywR__5LH3KvKW5rzO7TjvctkN9Tp9C21aLFs",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/reviews/2/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIwMDIzLCJleHAiOjE3NTU2MjE4MjN9.tdldmziywR__5LH3KvKW5rzO7TjvctkN9Tp9C21aLFs",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/reviews/"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "course review",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIwMDIzLCJleHAiOjE3NTU2MjE4MjN9.tdldmziywR__5LH3KvKW5rzO7TjvctkN9Tp9C21aLFs",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/reviews/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Instructors",
+			"item": [
+				{
+					"name": "add instructor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NDY5MzYzLCJleHAiOjE3NTU0NzExNjN9.SAeL0dqnUnaN9zW37EpXjYk0WR5BoqL-gaukuW14OAA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"israa Ali\",\r\n  \"email\": \"israa.ali@gmail.com\",\r\n  \"phone\": \"01012345678\",\r\n  \"age\": 28,\r\n  \"Bio\": \"Software Engineer with 10 years of experience in web development.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/instructors/add"
+					},
+					"response": []
+				},
+				{
+					"name": "photo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NDcxMjAxLCJleHAiOjE3NTU0NzMwMDF9.G9TOXmIb5d6mpEowCLdfiBuyWNMIcqk0zJjP3P-7bJo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f061721-3a8c-4900-ba4e-08989930150b"
+								}
+							]
+						},
+						"url": "http://localhost:3000/instructors/1/photo"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NDcxMjAxLCJleHAiOjE3NTU0NzMwMDF9.G9TOXmIb5d6mpEowCLdfiBuyWNMIcqk0zJjP3P-7bJo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"Bio\": \"Software Engineer with 3 years of experience in web development.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/instructors/1/update"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NDcxMjAxLCJleHAiOjE3NTU0NzMwMDF9.G9TOXmIb5d6mpEowCLdfiBuyWNMIcqk0zJjP3P-7bJo",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/instructors/1/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIwMDIzLCJleHAiOjE3NTU2MjE4MjN9.tdldmziywR__5LH3KvKW5rzO7TjvctkN9Tp9C21aLFs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/instructors/search?name=yo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"instructors",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "yo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIwMDIzLCJleHAiOjE3NTU2MjE4MjN9.tdldmziywR__5LH3KvKW5rzO7TjvctkN9Tp9C21aLFs",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/instructors/all"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIwMDIzLCJleHAiOjE3NTU2MjE4MjN9.tdldmziywR__5LH3KvKW5rzO7TjvctkN9Tp9C21aLFs",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/instructors"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "set",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIyMzkzLCJleHAiOjE3NTU2MjQxOTN9.uJyGVG0RzlBNJIWX3K-yA7-fFGJucBysRTp47S6A0IY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\":1,\r\n    \"instructorId\":2,\r\n    \"course_type\":\"online\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/Bookings/Book"
+					},
+					"response": []
+				},
+				{
+					"name": "pay_photo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIyMzkzLCJleHAiOjE3NTU2MjQxOTN9.uJyGVG0RzlBNJIWX3K-yA7-fFGJucBysRTp47S6A0IY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f064151-cce2-4c50-a7d5-6413cef7b4ae"
+								}
+							]
+						},
+						"url": "http://localhost:3000/bookings/1/photo"
+					},
+					"response": []
+				},
+				{
+					"name": "pending booking",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIyMzkzLCJleHAiOjE3NTU2MjQxOTN9.uJyGVG0RzlBNJIWX3K-yA7-fFGJucBysRTp47S6A0IY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/bookings/pending"
+					},
+					"response": []
+				},
+				{
+					"name": "reply booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIyMzkzLCJleHAiOjE3NTU2MjQxOTN9.uJyGVG0RzlBNJIWX3K-yA7-fFGJucBysRTp47S6A0IY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reply\":\"confirm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/bookings/1/reply"
+					},
+					"response": []
+				},
+				{
+					"name": "userBookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIyMzkzLCJleHAiOjE3NTU2MjQxOTN9.uJyGVG0RzlBNJIWX3K-yA7-fFGJucBysRTp47S6A0IY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/bookings/usersBookings"
+					},
+					"response": []
+				},
+				{
+					"name": "Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU1NjIyMzkzLCJleHAiOjE3NTU2MjQxOTN9.uJyGVG0RzlBNJIWX3K-yA7-fFGJucBysRTp47S6A0IY",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/bookings/"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
