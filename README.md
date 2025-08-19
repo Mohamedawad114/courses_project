@@ -80,7 +80,7 @@ Deployment Ready
 
 ⚙ Installation
 # Clone repo
-git clone https://github.com/username/courses-platform.git
+git clone https://github.com/Mohamedawad114/courses_project.git
 
 cd courses-platform
 
